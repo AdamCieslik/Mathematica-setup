@@ -1,0 +1,733 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     32235,        725]
+NotebookOptionsPosition[     28942,        650]
+NotebookOutlinePosition[     31268,        713]
+CellTagsIndexPosition[     31225,        710]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Notebook style", "Section"]], "Section",
+ CellChangeTimes->{{3.917850722044681*^9, 3.917850726787665*^9}, 
+   3.91839817996251*^9, {3.9399866772867527`*^9, 3.9399866781943893`*^9}},
+ FontWeight->"Plain",ExpressionUUID->"93e1f3e6-9770-4d14-a2e3-bdb70faeb2f0"],
+
+Cell[CellGroupData[{
+
+Cell["General", "Subsection",
+ CellChangeTimes->{{3.9184637632246037`*^9, 
+  3.918463764719253*^9}},ExpressionUUID->"b0a5b7b9-6723-434b-90c0-\
+5640e10d1b41"],
+
+Cell["\<\
+In the section below, I have configured the visual style of the entire \
+notebook with the following objectives:
+\t- Ensuring that code cells are delineated by borders, making them visually \
+distinct from textual content.
+\t- Using the \[OpenCurlyDoubleQuote]Times New Roman\[CloseCurlyDoubleQuote] \
+font for all textual elements; however, this can be changed if needed.
+\t- Displaying the estimated execution time (in seconds) on the right side of \
+each code cell.
+
+Each setting is specified in the following code and can be adjusted as \
+needed.
+ \
+\>", "Text",
+ CellChangeTimes->{{3.9183983586626*^9, 3.918398368505156*^9}, {
+  3.9183988476021843`*^9, 3.918398864996045*^9}, {3.918399267425329*^9, 
+  3.9183992779695053`*^9}, {3.918399447981925*^9, 3.918399448491508*^9}, {
+  3.918399518275979*^9, 3.91839952759708*^9}, {3.918399560172461*^9, 
+  3.918399568988302*^9}, {3.9183996740794*^9, 3.91839967848243*^9}, {
+  3.9473104200592203`*^9, 3.94731044203621*^9}, {3.947310608702464*^9, 
+  3.947310670833708*^9}, {3.94731091597563*^9, 
+  3.947310916890567*^9}},ExpressionUUID->"dd8ac7b9-6c86-432b-ba2a-\
+4a489e841f61"],
+
+Cell["\<\
+Here, we select the fonts based on the operating system we are using.\
+\>", "Text",
+ CellChangeTimes->{{3.947310472343032*^9, 3.9473105107532473`*^9}, 
+   3.947310924031714*^9},ExpressionUUID->"2721bdcb-e8e3-41e4-b8f9-\
+24aea6745df6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fontWindows", "=", "\"\<Times New Roman\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fontMac", "=", "\"\<Times New Roman\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fontUnix", "=", "\"\<Times New Roman\>\""}], ";"}]}], "Input",
+ CellFrameLabels->{{None, 
+    Cell[
+     BoxData[
+      StyleBox[
+       RowBox[{"(", "8.30", " ", " ms", ")"}], Plain]]]}, {None, None}},
+ CellChangeTimes->{{3.947309863631855*^9, 3.94730987380443*^9}, {
+   3.947309935273836*^9, 3.947309956978836*^9}, {3.947310022881138*^9, 
+   3.94731003108567*^9}, 3.9473100945168858`*^9, {3.9473103348902082`*^9, 
+   3.947310397329154*^9}},
+ CellLabel->
+  "In[171]:=",ExpressionUUID->"706993ed-46f9-4f4c-a28f-40dc3eda5dc6"],
+
+Cell["This is a code implementing our goals ", "Text",
+ CellChangeTimes->{{3.947310514858769*^9, 
+  3.947310538919444*^9}},ExpressionUUID->"03105ac8-f833-4ce0-9ad6-\
+125cb7eabb7c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"$OperatingSystem", "==", "\"\<Windows\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"SetOptions", "[", 
+     RowBox[{
+      RowBox[{"EvaluationNotebook", "[", "]"}], ",", "\[IndentingNewLine]", 
+      "\t", 
+      RowBox[{"StyleDefinitions", "->", 
+       RowBox[{"Notebook", "[", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+            RowBox[{"A", " ", "general", " ", "theme"}], ",", " ", 
+            RowBox[{"of", " ", "the", " ", "entire", " ", "notebook"}]}], " ",
+            "*)"}], "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Cell", "[", 
+            RowBox[{"StyleData", "[", 
+             RowBox[{"StyleDefinitions", "->", "\"\<Default.nb\>\""}], "]"}], 
+            "]"}], ",", "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{
+            "Font", " ", "settings", " ", "for", " ", "the", " ", "text"}], 
+            " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Text\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontWindows"}], ",", 
+             RowBox[{"FontSlant", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{"Font", " ", "settings", " ", "for", " ", "titles"}], " ",
+             "*)"}], "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Title\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontWindows"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Subtitle\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontWindows"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Chapter\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontWindows"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Section\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontWindows"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Subsection\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontWindows"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Subsubsection\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontWindows"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{"Cell", " ", "borders"}], " ", "*)"}], 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Input\>\"", "]"}], ",", 
+             RowBox[{"CellFrame", "->", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "1"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ",", 
+             "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"(*", " ", 
+              RowBox[{"Cell", " ", "timing"}], " ", "*)"}], 
+             "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"CellProlog", ":>", 
+              RowBox[{"(", 
+               RowBox[{"in", "=", 
+                RowBox[{"AbsoluteTime", "[", "]"}]}], ")"}]}], ",", 
+             RowBox[{"CellEpilog", ":>", 
+              RowBox[{"Module", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"elapsed", ",", "formattedTime", ",", "unit"}], 
+                 "}"}], ",", 
+                RowBox[{
+                 RowBox[{"elapsed", "=", 
+                  RowBox[{
+                   RowBox[{"AbsoluteTime", "[", "]"}], "-", "in"}]}], ";", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"formattedTime", ",", "unit"}], "}"}], "=", 
+                  RowBox[{"Which", "[", 
+                   RowBox[{
+                    RowBox[{"elapsed", "<", "0.001"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", " ", "1000000"}], ",", 
+                    "\"\< \[Mu]s\>\""}], "}"}], ",", 
+                    RowBox[{"elapsed", "<", "1"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", " ", "1000"}], ",", "\"\< ms\>\""}], 
+                    "}"}], ",", 
+                    RowBox[{"elapsed", "<", "60"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"elapsed", ",", "\"\< s\>\""}], "}"}], ",", 
+                    RowBox[{"elapsed", "<", "3600"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", "/", "60"}], ",", "\"\< min\>\""}], 
+                    "}"}], ",", "True", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", "/", "3600"}], ",", "\"\< h\>\""}], 
+                    "}"}]}], "]"}]}], ";", 
+                 RowBox[{
+                  RowBox[{"CurrentValue", "[", 
+                   RowBox[{
+                    RowBox[{"EvaluationCell", "[", "]"}], ",", 
+                    "CellFrameLabels"}], "]"}], "=", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"None", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"BoxData", "[", 
+                    RowBox[{"StyleBox", "[", 
+                    RowBox[{
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<(\>\"", ",", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"formattedTime", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"Infinity", ",", "2"}], "}"}]}], "]"}], "]"}], 
+                    ",", "\"\< \>\"", ",", "unit", ",", "\"\<)\>\""}], "}"}], 
+                    "]"}], ",", "Plain"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"None", ",", "None"}], "}"}]}], "}"}]}]}]}], 
+               "]"}]}]}], "\n", "\t\t\t", "]"}]}], "\[IndentingNewLine]", 
+          "\t\t", "}"}], ",", "\[IndentingNewLine]", "\t\t", 
+         RowBox[{
+         "StyleDefinitions", "->", 
+          "\"\<PrivateStylesheetFormatting.nb\>\""}]}], "\[IndentingNewLine]",
+         "\t", "]"}]}]}], "\[IndentingNewLine]", "\t", "]"}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}]], "Input",
+ CellFrameLabels->{{None, 
+    Cell[
+     BoxData[
+      StyleBox[
+       RowBox[{"(", "5.90", " ", " ms", ")"}], Plain]]]}, {None, None}},
+ CellChangeTimes->{
+  3.9399867485572*^9, 3.9399868660501204`*^9, {3.939986925971726*^9, 
+   3.939986946323101*^9}, {3.9473098957003183`*^9, 3.947309916671836*^9}, {
+   3.947309963641815*^9, 3.947309987374628*^9}, {3.947319778920764*^9, 
+   3.9473197813706408`*^9}, 3.947319830791922*^9, {3.9473199925932713`*^9, 
+   3.947320004040875*^9}},
+ CellLabel->
+  "In[174]:=",ExpressionUUID->"b6a397de-b0f4-46cb-b0f5-d197258ce169"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"$OperatingSystem", "==", "\"\<MacOSX\>\""}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"SetOptions", "[", 
+      RowBox[{
+       RowBox[{"EvaluationNotebook", "[", "]"}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"StyleDefinitions", "->", 
+        RowBox[{"Notebook", "[", "\[IndentingNewLine]", "\t\t", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{
+             RowBox[{"A", " ", "general", " ", "theme"}], ",", " ", 
+             RowBox[{"of", " ", "the", " ", "entire", " ", "notebook"}]}], 
+            " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+           RowBox[{
+            RowBox[{"Cell", "[", 
+             RowBox[{"StyleData", "[", 
+              RowBox[{"StyleDefinitions", "->", "\"\<Default.nb\>\""}], "]"}],
+              "]"}], ",", "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"(*", " ", 
+             RowBox[{
+             "Font", " ", "settings", " ", "for", " ", "the", " ", "text"}], 
+             " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Text\>\"", "]"}], ",", 
+              RowBox[{"FontFamily", "->", "fontMac"}], ",", 
+              RowBox[{"FontSlant", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"(*", " ", 
+             RowBox[{"Font", " ", "settings", " ", "for", " ", "titles"}], 
+             " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Title\>\"", "]"}], ",", 
+              RowBox[{"FontFamily", "->", "fontMac"}], ",", 
+              RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Subtitle\>\"", "]"}], ",", 
+              RowBox[{"FontFamily", "->", "fontMac"}], ",", 
+              RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Chapter\>\"", "]"}], ",", 
+              RowBox[{"FontFamily", "->", "fontMac"}], ",", 
+              RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Section\>\"", "]"}], ",", 
+              RowBox[{"FontFamily", "->", "fontMac"}], ",", 
+              RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Subsection\>\"", "]"}], ",", 
+              RowBox[{"FontFamily", "->", "fontMac"}], ",", 
+              RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Subsubsection\>\"", "]"}], ",", 
+              RowBox[{"FontFamily", "->", "fontMac"}], ",", 
+              RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"(*", " ", 
+             RowBox[{"Cell", " ", "borders"}], " ", "*)"}], 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", "\"\<Input\>\"", "]"}], ",", 
+              RowBox[{"CellFrame", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "1"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ",", 
+              "\[IndentingNewLine]", "\t\t", 
+              RowBox[{"(*", " ", 
+               RowBox[{"Cell", " ", "timing"}], " ", "*)"}], 
+              "\[IndentingNewLine]", "\t\t", 
+              RowBox[{"CellProlog", ":>", 
+               RowBox[{"(", 
+                RowBox[{"in", "=", 
+                 RowBox[{"AbsoluteTime", "[", "]"}]}], ")"}]}], ",", 
+              RowBox[{"CellEpilog", ":>", 
+               RowBox[{"Module", "[", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"elapsed", ",", "formattedTime", ",", "unit"}], 
+                  "}"}], ",", 
+                 RowBox[{
+                  RowBox[{"elapsed", "=", 
+                   RowBox[{
+                    RowBox[{"AbsoluteTime", "[", "]"}], "-", "in"}]}], ";", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"formattedTime", ",", "unit"}], "}"}], "=", 
+                   RowBox[{"Which", "[", 
+                    RowBox[{
+                    RowBox[{"elapsed", "<", "0.001"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", " ", "1000000"}], ",", 
+                    "\"\< \[Mu]s\>\""}], "}"}], ",", 
+                    RowBox[{"elapsed", "<", "1"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", " ", "1000"}], ",", "\"\< ms\>\""}], 
+                    "}"}], ",", 
+                    RowBox[{"elapsed", "<", "60"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"elapsed", ",", "\"\< s\>\""}], "}"}], ",", 
+                    RowBox[{"elapsed", "<", "3600"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", "/", "60"}], ",", "\"\< min\>\""}], 
+                    "}"}], ",", "True", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", "/", "3600"}], ",", "\"\< h\>\""}], 
+                    "}"}]}], "]"}]}], ";", 
+                  RowBox[{
+                   RowBox[{"CurrentValue", "[", 
+                    RowBox[{
+                    RowBox[{"EvaluationCell", "[", "]"}], ",", 
+                    "CellFrameLabels"}], "]"}], "=", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"None", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"BoxData", "[", 
+                    RowBox[{"StyleBox", "[", 
+                    RowBox[{
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<(\>\"", ",", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"formattedTime", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"Infinity", ",", "2"}], "}"}]}], "]"}], "]"}], 
+                    ",", "\"\< \>\"", ",", "unit", ",", "\"\<)\>\""}], "}"}], 
+                    "]"}], ",", "Plain"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"None", ",", "None"}], "}"}]}], "}"}]}]}]}], 
+                "]"}]}]}], "]"}]}], "\[IndentingNewLine]", "\t\t", "}"}], ",",
+           "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+          "StyleDefinitions", "->", 
+           "\"\<PrivateStylesheetFormatting.nb\>\""}]}], 
+         "\[IndentingNewLine]", "\t", "]"}]}]}], "\[IndentingNewLine]", "\t", 
+      "]"}]}], "\[IndentingNewLine]", "]"}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellFrameLabels->{{None, 
+    Cell[
+     BoxData[
+      StyleBox[
+       RowBox[{"(", "26.47", " ", " ms", ")"}], Plain]]]}, {None, None}},
+ CellChangeTimes->{{3.918138325385837*^9, 3.918138337951418*^9}, {
+   3.918138460193789*^9, 3.9181384773308496`*^9}, {3.918138514684268*^9, 
+   3.918138534732355*^9}, 3.9183997133609447`*^9, {3.91839976194307*^9, 
+   3.9183997956374407`*^9}, {3.918399828843019*^9, 3.918399927949541*^9}, {
+   3.918400179076517*^9, 3.918400184788118*^9}, {3.9184003631626596`*^9, 
+   3.9184004136897707`*^9}, {3.9184004535023518`*^9, 3.918400458842585*^9}, {
+   3.918400491896421*^9, 3.918400521828229*^9}, {3.918400563330751*^9, 
+   3.918400614335926*^9}, {3.919754447896512*^9, 3.919754535906982*^9}, {
+   3.9399867084447937`*^9, 3.939986732725061*^9}, {3.939987406857087*^9, 
+   3.939987427889585*^9}, {3.941782194379127*^9, 3.9417822137498503`*^9}, {
+   3.947309924612364*^9, 3.94730992709024*^9}, {3.947310052783287*^9, 
+   3.9473100733663893`*^9}, {3.947319800799325*^9, 3.94731980211978*^9}, {
+   3.947319939477694*^9, 3.947319978309339*^9}},
+ CellLabel->
+  "In[175]:=",ExpressionUUID->"898b0271-c0f4-4964-8d64-e6bd140d8e3e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"$OperatingSystem", "==", "\"\<Unix\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"SetOptions", "[", 
+     RowBox[{
+      RowBox[{"EvaluationNotebook", "[", "]"}], ",", "\[IndentingNewLine]", 
+      "\t", 
+      RowBox[{"StyleDefinitions", "->", 
+       RowBox[{"Notebook", "[", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+            RowBox[{"A", " ", "general", " ", "theme"}], ",", " ", 
+            RowBox[{"of", " ", "the", " ", "entire", " ", "notebook"}]}], " ",
+            "*)"}], "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Cell", "[", 
+            RowBox[{"StyleData", "[", 
+             RowBox[{"StyleDefinitions", "->", "\"\<Default.nb\>\""}], "]"}], 
+            "]"}], ",", "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{
+            "Font", " ", "settings", " ", "for", " ", "the", " ", "text"}], 
+            " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Text\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontUnix"}], ",", 
+             RowBox[{"FontSlant", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{"Font", " ", "settings", " ", "for", " ", "titles"}], " ",
+             "*)"}], "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Title\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontUnix"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Subtitle\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontUnix"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Chapter\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontUnix"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Section\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontUnix"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Subsection\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontUnix"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Subsubsection\>\"", "]"}], ",", 
+             RowBox[{"FontFamily", "->", "fontUnix"}], ",", 
+             RowBox[{"FontWeight", "->", "\"\<Plain\>\""}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"(*", " ", 
+            RowBox[{"Cell", " ", "borders"}], " ", "*)"}], 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Cell", "[", 
+            RowBox[{
+             RowBox[{"StyleData", "[", "\"\<Input\>\"", "]"}], ",", 
+             RowBox[{"CellFrame", "->", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "1"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ",", 
+             "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"(*", " ", 
+              RowBox[{"Cell", " ", "timing"}], " ", "*)"}], 
+             "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"CellProlog", ":>", 
+              RowBox[{"(", 
+               RowBox[{"in", "=", 
+                RowBox[{"AbsoluteTime", "[", "]"}]}], ")"}]}], ",", 
+             RowBox[{"CellEpilog", ":>", 
+              RowBox[{"Module", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"elapsed", ",", "formattedTime", ",", "unit"}], 
+                 "}"}], ",", 
+                RowBox[{
+                 RowBox[{"elapsed", "=", 
+                  RowBox[{
+                   RowBox[{"AbsoluteTime", "[", "]"}], "-", "in"}]}], ";", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"formattedTime", ",", "unit"}], "}"}], "=", 
+                  RowBox[{"Which", "[", 
+                   RowBox[{
+                    RowBox[{"elapsed", "<", "0.001"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", " ", "1000000"}], ",", 
+                    "\"\< \[Mu]s\>\""}], "}"}], ",", 
+                    RowBox[{"elapsed", "<", "1"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", " ", "1000"}], ",", "\"\< ms\>\""}], 
+                    "}"}], ",", 
+                    RowBox[{"elapsed", "<", "60"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"elapsed", ",", "\"\< s\>\""}], "}"}], ",", 
+                    RowBox[{"elapsed", "<", "3600"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", "/", "60"}], ",", "\"\< min\>\""}], 
+                    "}"}], ",", "True", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"elapsed", "/", "3600"}], ",", "\"\< h\>\""}], 
+                    "}"}]}], "]"}]}], ";", 
+                 RowBox[{
+                  RowBox[{"CurrentValue", "[", 
+                   RowBox[{
+                    RowBox[{"EvaluationCell", "[", "]"}], ",", 
+                    "CellFrameLabels"}], "]"}], "=", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"None", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"BoxData", "[", 
+                    RowBox[{"StyleBox", "[", 
+                    RowBox[{
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<(\>\"", ",", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"formattedTime", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"Infinity", ",", "2"}], "}"}]}], "]"}], "]"}], 
+                    ",", "\"\< \>\"", ",", "unit", ",", "\"\<)\>\""}], "}"}], 
+                    "]"}], ",", "Plain"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"None", ",", "None"}], "}"}]}], "}"}]}]}]}], 
+               "]"}]}]}], "\n", "\t\t\t", "]"}]}], "\[IndentingNewLine]", 
+          "\t\t", "}"}], ",", "\[IndentingNewLine]", "\t\t", 
+         RowBox[{
+         "StyleDefinitions", "->", 
+          "\"\<PrivateStylesheetFormatting.nb\>\""}]}], "\[IndentingNewLine]",
+         "\t", "]"}]}]}], "\[IndentingNewLine]", "\t", "]"}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}]], "Input",
+ CellFrameLabels->{{None, 
+    Cell[
+     BoxData[
+      StyleBox[
+       RowBox[{"(", "3.73", " ", " ms", ")"}], Plain]]]}, {None, None}},
+ CellChangeTimes->{{3.9399874406903563`*^9, 3.939987478786742*^9}, {
+  3.947310101892424*^9, 3.947310117913801*^9}, {3.947319845629484*^9, 
+  3.9473198807237864`*^9}, {3.947319928617083*^9, 3.9473199295176487`*^9}, {
+  3.94731998208646*^9, 3.9473199834352016`*^9}},
+ CellLabel->
+  "In[176]:=",ExpressionUUID->"5747479f-87ce-445a-a088-bd0415b01c18"],
+
+Cell["\<\
+If you prefer the original style, execute the provided code, and the notebook \
+will revert to its default appearance .\
+\>", "Text",
+ CellChangeTimes->{{3.9183996809579782`*^9, 
+  3.918399682900551*^9}},ExpressionUUID->"ecb89ade-d0fe-4aea-9c25-\
+f0b80e8f7cdc"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", "\[IndentingNewLine]", 
+  RowBox[{"SetOptions", "[", 
+   RowBox[{
+    RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+    RowBox[{"StyleDefinitions", "->", "\"\<Default.nb\>\""}]}], "]"}], " ", 
+  "\[IndentingNewLine]", "*)"}]], "Input",
+ CellFrameLabels->{{None, 
+    Cell[
+     BoxData[
+      StyleBox[
+       RowBox[{"(", "6.86", " ", " ms", ")"}], Plain]]]}, {None, None}},
+ CellChangeTimes->{{3.9183991846892347`*^9, 3.9183991921602077`*^9}, 
+   3.947310800364493*^9, {3.9473109886682587`*^9, 3.9473110131818533`*^9}},
+ CellLabel->
+  "In[177]:=",ExpressionUUID->"69938d68-bddd-4ab3-a31b-ccfacc5286a6"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 1027},
+WindowMargins->{{Automatic, 1512}, {-37, Automatic}},
+FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData["Text"], FontFamily -> "Times New Roman", FontSlant -> "Plain"], 
+   Cell[
+    StyleData["Title"], FontFamily -> "Times New Roman", FontWeight -> 
+    "Plain"], 
+   Cell[
+    StyleData["Subtitle"], FontFamily -> "Times New Roman", FontWeight -> 
+    "Plain"], 
+   Cell[
+    StyleData["Chapter"], FontFamily -> "Times New Roman", FontWeight -> 
+    "Plain"], 
+   Cell[
+    StyleData["Section"], FontFamily -> "Times New Roman", FontWeight -> 
+    "Plain"], 
+   Cell[
+    StyleData["Subsection"], FontFamily -> "Times New Roman", FontWeight -> 
+    "Plain"], 
+   Cell[
+    StyleData["Subsubsection"], FontFamily -> "Times New Roman", FontWeight -> 
+    "Plain"], 
+   Cell[
+    StyleData["Input"], CellFrame -> {{1, 1}, {1, 1}}, 
+    CellProlog :> ($CellContext`in = AbsoluteTime[]), CellEpilog :> 
+    Module[{$CellContext`elapsed, $CellContext`formattedTime, \
+$CellContext`unit}, $CellContext`elapsed = 
+       AbsoluteTime[] - $CellContext`in; {$CellContext`formattedTime, \
+$CellContext`unit} = 
+       Which[$CellContext`elapsed < 
+         0.001, {$CellContext`elapsed 1000000, 
+          " \[Mu]s"}, $CellContext`elapsed < 
+         1, {$CellContext`elapsed 1000, " ms"}, $CellContext`elapsed < 
+         60, {$CellContext`elapsed, " s"}, $CellContext`elapsed < 
+         3600, {$CellContext`elapsed/60, " min"}, 
+         True, {$CellContext`elapsed/3600, " h"}]; CurrentValue[
+         EvaluationCell[], CellFrameLabels] = {{None, 
+          Cell[
+           BoxData[
+            StyleBox[
+             RowBox[{"(", 
+               ToString[
+                NumberForm[$CellContext`formattedTime, {Infinity, 2}]], 
+               " ", $CellContext`unit, ")"}], Plain]]]}, {None, None}}]]}, 
+  Visible -> False, FrontEndVersion -> 
+  "14.1 for Mac OS X ARM (64-bit) (July 16, 2024)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"e2191e32-16f7-4936-ba8b-b9a2e01b9789"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 282, 3, 62, "Section",ExpressionUUID->"93e1f3e6-9770-4d14-a2e3-bdb70faeb2f0"],
+Cell[CellGroupData[{
+Cell[883, 29, 157, 3, 50, "Subsection",ExpressionUUID->"b0a5b7b9-6723-434b-90c0-5640e10d1b41"],
+Cell[1043, 34, 1132, 22, 149, "Text",ExpressionUUID->"dd8ac7b9-6c86-432b-ba2a-4a489e841f61"],
+Cell[2178, 58, 244, 5, 31, "Text",ExpressionUUID->"2721bdcb-e8e3-41e4-b8f9-24aea6745df6"],
+Cell[2425, 65, 763, 19, 88, "Input",ExpressionUUID->"706993ed-46f9-4f4c-a28f-40dc3eda5dc6"],
+Cell[3191, 86, 180, 3, 31, "Text",ExpressionUUID->"03105ac8-f833-4ce0-9ad6-125cb7eabb7c"],
+Cell[3374, 91, 8004, 173, 517, "Input",ExpressionUUID->"b6a397de-b0f4-46cb-b0f5-d197258ce169"],
+Cell[11381, 266, 8708, 182, 517, "Input",ExpressionUUID->"898b0271-c0f4-4964-8d64-e6bd140d8e3e"],
+Cell[20092, 450, 7905, 171, 517, "Input",ExpressionUUID->"5747479f-87ce-445a-a088-bd0415b01c18"],
+Cell[28000, 623, 271, 6, 31, "Text",ExpressionUUID->"ecb89ade-d0fe-4aea-9c25-f0b80e8f7cdc"],
+Cell[28274, 631, 640, 15, 88, "Input",ExpressionUUID->"69938d68-bddd-4ab3-a31b-ccfacc5286a6"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

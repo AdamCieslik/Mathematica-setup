@@ -1,0 +1,103 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3996,         95]
+NotebookOptionsPosition[      2508,         72]
+NotebookOutlinePosition[      2919,         88]
+CellTagsIndexPosition[      2876,         85]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Default.nb"],ExpressionUUID->"e5538098-768c-44d5-9e22-57979724bcfb"],
+
+Cell[StyleData["Input"],
+ CellFrame->{{1, 1}, {1, 1}},
+ CellProlog:>(in = AbsoluteTime[]),
+ CellEpilog:>
+  Module[{elapsed, formattedTime, unit}, 
+   elapsed = AbsoluteTime[] - in; {formattedTime, unit} = 
+    Which[elapsed < 0.001, {elapsed 1000000, " \[Mu]s"}, elapsed < 1, {
+      elapsed 1000, " ms"}, elapsed < 60, {elapsed, " s"}, elapsed < 3600, {
+      elapsed/60, " min"}, True, {elapsed/3600, " h"}]; CurrentValue[
+      EvaluationCell[], CellFrameLabels] = {{None, 
+       Cell[
+        BoxData[
+         StyleBox[
+          RowBox[{"(", 
+            ToString[
+             NumberForm[formattedTime, {Infinity, 2}]], " ", unit, ")"}], 
+          Plain]]]}, {None, None}}],
+ CellFrameColor->GrayLevel[
+  0.5],ExpressionUUID->"b3d40768-ad8a-4a78-b56e-4588e7d0008e"],
+
+Cell[StyleData["Title"],
+ FontFamily->"Latin Modern Roman",
+ FontSlant->"Plain",ExpressionUUID->"eead45a5-ee53-4e42-87b1-4bacd36dd5a4"],
+
+Cell[StyleData["Subtitle"],
+ FontFamily->"Latin Modern Roman",
+ FontWeight->"Plain",ExpressionUUID->"47d64d1d-3b3b-466a-9678-0f954d6f6a68"],
+
+Cell[StyleData["Chapter"],
+ FontFamily->"Latin Modern Roman",
+ FontWeight->"Plain",ExpressionUUID->"0f8bc430-31a2-4c62-bbc6-656e3196034b"],
+
+Cell[StyleData["Section"],
+ FontFamily->"Latin Modern Roman",
+ FontWeight->"Plain",ExpressionUUID->"46a72c63-4428-4b5a-9f49-b042d996919e"],
+
+Cell[StyleData["Subsection"],
+ FontFamily->"Latin Modern Roman",
+ FontWeight->"Plain",ExpressionUUID->"b764ad4b-351a-45fb-befa-d0984c78c52c"],
+
+Cell[StyleData["Subsubsection"],
+ FontFamily->"Latin Modern Roman",
+ FontWeight->"Plain",ExpressionUUID->"cfe3fc07-7581-48ba-9776-955cbc0fcdeb"],
+
+Cell[StyleData["Text"],
+ FontFamily->"Latin Modern Roman",
+ FontWeight->"Plain",ExpressionUUID->"3585dc27-e5bd-4bcb-992a-25e51106349e"],
+
+Cell[StyleData[All],ExpressionUUID->"b8d15704-c686-4cba-b4cd-76c2dde3962c"]
+},
+WindowSize->{756, 916},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
+StyleDefinitions->"PrivateStylesheetFormatting.nb",
+ExpressionUUID->"debef7af-1b99-4557-988e-e7ce09a68930"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 104, 0, 30, 49, 0, "StyleData", "StyleDefinitions", "",ExpressionUUID->"e5538098-768c-44d5-9e22-57979724bcfb"],
+Cell[661, 22, 774, 18, 59, 24, 0, "StyleData", "Input", "All",ExpressionUUID->"b3d40768-ad8a-4a78-b56e-4588e7d0008e"],
+Cell[1438, 42, 135, 2, 119, 24, 0, "StyleData", "Title", "All",ExpressionUUID->"eead45a5-ee53-4e42-87b1-4bacd36dd5a4"],
+Cell[1576, 46, 139, 2, 71, 27, 0, "StyleData", "Subtitle", "All",ExpressionUUID->"47d64d1d-3b3b-466a-9678-0f954d6f6a68"],
+Cell[1718, 50, 138, 2, 88, 26, 0, "StyleData", "Chapter", "All",ExpressionUUID->"0f8bc430-31a2-4c62-bbc6-656e3196034b"],
+Cell[1859, 54, 138, 2, 72, 26, 0, "StyleData", "Section", "All",ExpressionUUID->"46a72c63-4428-4b5a-9f49-b042d996919e"],
+Cell[2000, 58, 141, 2, 55, 29, 0, "StyleData", "Subsection", "All",ExpressionUUID->"b764ad4b-351a-45fb-befa-d0984c78c52c"],
+Cell[2144, 62, 144, 2, 54, 32, 0, "StyleData", "Subsubsection", "All",ExpressionUUID->"cfe3fc07-7581-48ba-9776-955cbc0fcdeb"],
+Cell[2291, 66, 135, 2, 47, 23, 0, "StyleData", "Text", "All",ExpressionUUID->"3585dc27-e5bd-4bcb-992a-25e51106349e"],
+Cell[2429, 70, 75, 0, 35, 20, 0, "StyleData", "All", "All",ExpressionUUID->"b8d15704-c686-4cba-b4cd-76c2dde3962c"]
+}
+]
+*)
+
