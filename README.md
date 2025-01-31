@@ -53,4 +53,4 @@ If you encounter any issues, feel free to open a new **GitHub Issue**. Your feed
 
 ---
 
-**Thank you for your interest and support!**  
+**Thank you for your interest!**  
