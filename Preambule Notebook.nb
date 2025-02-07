@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     32251,        725]
-NotebookOptionsPosition[     28958,        650]
-NotebookOutlinePosition[     31284,        713]
-CellTagsIndexPosition[     31241,        710]
+NotebookDataLength[     32374,        727]
+NotebookOptionsPosition[     29073,        652]
+NotebookOutlinePosition[     31407,        715]
+CellTagsIndexPosition[     31364,        712]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -44,7 +44,8 @@ cell.
 
 Each setting is specified in the following code and can be adjusted as \
 needed.
- \
+ 
+For more visit: https://github.com/AdamCieslik/Mathematica-setup\
 \>", "Text",
  CellChangeTimes->{{3.9183983586626*^9, 3.918398368505156*^9}, {
    3.9183988476021843`*^9, 3.918398864996045*^9}, {3.918399267425329*^9, 
@@ -53,7 +54,8 @@ needed.
    3.918399568988302*^9}, {3.9183996740794*^9, 3.91839967848243*^9}, {
    3.9473104200592203`*^9, 3.94731044203621*^9}, {3.947310608702464*^9, 
    3.947310670833708*^9}, {3.94731091597563*^9, 3.947310916890567*^9}, 
-   3.947320495305924*^9},ExpressionUUID->"dd8ac7b9-6c86-432b-ba2a-\
+   3.947320495305924*^9, {3.947913551226788*^9, 
+   3.947913556231853*^9}},ExpressionUUID->"dd8ac7b9-6c86-432b-ba2a-\
 4a489e841f61"],
 
 Cell["\<\
@@ -650,7 +652,7 @@ Cell[BoxData[
 },
 WindowSize->{1920, 1027},
 WindowMargins->{{Automatic, 1512}, {-37, Automatic}},
-FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (December 26, 2024)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
@@ -697,7 +699,7 @@ $CellContext`unit} =
                 NumberForm[$CellContext`formattedTime, {Infinity, 2}]], 
                " ", $CellContext`unit, ")"}], Plain]]]}, {None, None}}]]}, 
   Visible -> False, FrontEndVersion -> 
-  "14.1 for Mac OS X ARM (64-bit) (July 16, 2024)", StyleDefinitions -> 
+  "14.2 for Mac OS X ARM (64-bit) (December 26, 2024)", StyleDefinitions -> 
   "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"e2191e32-16f7-4936-ba8b-b9a2e01b9789"
 ]
@@ -716,15 +718,15 @@ Cell[CellGroupData[{
 Cell[576, 22, 282, 3, 62, "Section",ExpressionUUID->"93e1f3e6-9770-4d14-a2e3-bdb70faeb2f0"],
 Cell[CellGroupData[{
 Cell[883, 29, 157, 3, 50, "Subsection",ExpressionUUID->"b0a5b7b9-6723-434b-90c0-5640e10d1b41"],
-Cell[1043, 34, 1148, 22, 149, "Text",ExpressionUUID->"dd8ac7b9-6c86-432b-ba2a-4a489e841f61"],
-Cell[2194, 58, 244, 5, 31, "Text",ExpressionUUID->"2721bdcb-e8e3-41e4-b8f9-24aea6745df6"],
-Cell[2441, 65, 763, 19, 88, "Input",ExpressionUUID->"706993ed-46f9-4f4c-a28f-40dc3eda5dc6"],
-Cell[3207, 86, 180, 3, 31, "Text",ExpressionUUID->"03105ac8-f833-4ce0-9ad6-125cb7eabb7c"],
-Cell[3390, 91, 8004, 173, 517, "Input",ExpressionUUID->"b6a397de-b0f4-46cb-b0f5-d197258ce169"],
-Cell[11397, 266, 8708, 182, 517, "Input",ExpressionUUID->"898b0271-c0f4-4964-8d64-e6bd140d8e3e"],
-Cell[20108, 450, 7905, 171, 517, "Input",ExpressionUUID->"5747479f-87ce-445a-a088-bd0415b01c18"],
-Cell[28016, 623, 271, 6, 31, "Text",ExpressionUUID->"ecb89ade-d0fe-4aea-9c25-f0b80e8f7cdc"],
-Cell[28290, 631, 640, 15, 88, "Input",ExpressionUUID->"69938d68-bddd-4ab3-a31b-ccfacc5286a6"]
+Cell[1043, 34, 1263, 24, 168, "Text",ExpressionUUID->"dd8ac7b9-6c86-432b-ba2a-4a489e841f61"],
+Cell[2309, 60, 244, 5, 31, "Text",ExpressionUUID->"2721bdcb-e8e3-41e4-b8f9-24aea6745df6"],
+Cell[2556, 67, 763, 19, 88, "Input",ExpressionUUID->"706993ed-46f9-4f4c-a28f-40dc3eda5dc6"],
+Cell[3322, 88, 180, 3, 31, "Text",ExpressionUUID->"03105ac8-f833-4ce0-9ad6-125cb7eabb7c"],
+Cell[3505, 93, 8004, 173, 517, "Input",ExpressionUUID->"b6a397de-b0f4-46cb-b0f5-d197258ce169"],
+Cell[11512, 268, 8708, 182, 517, "Input",ExpressionUUID->"898b0271-c0f4-4964-8d64-e6bd140d8e3e"],
+Cell[20223, 452, 7905, 171, 517, "Input",ExpressionUUID->"5747479f-87ce-445a-a088-bd0415b01c18"],
+Cell[28131, 625, 271, 6, 31, "Text",ExpressionUUID->"ecb89ade-d0fe-4aea-9c25-f0b80e8f7cdc"],
+Cell[28405, 633, 640, 15, 88, "Input",ExpressionUUID->"69938d68-bddd-4ab3-a31b-ccfacc5286a6"]
 }, Open  ]]
 }, Open  ]]
 }
