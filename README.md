@@ -42,7 +42,7 @@ If you're looking for tools to enhance your workflow, consider these:
 
 ---
 
-## ⚡ Feel Free to Contribute!  
+## Feel Free to Contribute!  
 
 ---
 
